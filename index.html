@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Museo de la Moneda · Sala de Juegos</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <filter id="wob">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency=".012 .02"
+          numOctaves="2"
+          seed="4"
+        />
+        <feDisplacementMap in="SourceGraphic" scale="14" />
+      </filter>
+    </svg>
+    <div class="bg" id="bg"></div>
+    <header>
+      <h1>Museo de la Moneda</h1>
+      <p>
+        Banco de la República · Bogotá. Una colección para descubrir con las
+        manos: elige una pieza, supera el reto y conoce su historia.
+      </p>
+      <span class="pill">Colección: <span id="cnt">0</span>/23 ⭐</span>
+      <span class="pill">Mejor tiempo: <span id="rec">--</span></span>
+    </header>
+    <main>
+      <section class="shelf">
+        <h2>Vitrina de la colección</h2>
+        <div class="car">
+          <button class="arr" id="pv" aria-label="Anterior">‹</button>
+          <div class="grid" id="grid"></div>
+          <button class="arr" id="nx" aria-label="Siguiente">›</button>
+        </div>
+      </section>
+      <section class="machine">
+        <h2>Estación interactiva</h2>
+        <div class="hud">
+          <span>⏱️ <span id="t">--</span>s</span
+          ><span>🎯 <span id="s">0</span>/5</span>
+        </div>
+        <div class="bar"><i id="bar"></i></div>
+        <div class="screen" id="screen">
+          <div class="msg">
+            Bienvenido. Arrastra (o toca) una pieza hacia la ranura para
+            comenzar el reto.
+          </div>
+        </div>
+        <div class="slot" id="slot">INSERTAR PIEZA</div>
+      </section>
+    </main>
+    <div class="modal" id="modal"><div class="panel" id="panel"></div></div>
+    <footer>
+      Datos con fines educativos; verifícalos con el Museo de la Moneda (Banco
+      de la República, La Candelaria, Bogotá). Piezas dibujadas de forma
+      ilustrativa.
+    </footer>
+  </body>
+</html>
